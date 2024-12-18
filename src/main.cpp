@@ -1,36 +1,98 @@
 #include "interval_map.h"
 
+void test_interval_map() {//пример из условия
+    interval_map<int, int> map;
+
+    map.insert(1, {4, 6});
+    map.insert(1, {3, 6});
+    map.insert(1, {6, 9});
+    map.insert(1, {1, 3});
+
+    map.print();
+}
+
+void test_interval_map2() {//пример из условия 2
+    interval_map<int, int> map;
+
+    //map.insert(1, {4, 6});
+    //map.insert(1, {3, 6});
+    map.insert(1, {6, 9});
+    map.insert(1, {1, 3});
+
+    map.print();
+}
+
+void test_interval_map3() {//пример из условия 3
+    interval_map<int, int> map;
+
+    map.insert(1, {4, 6});
+    map.insert(1, {3, 6});
+    //map.insert(1, {6, 9});
+    //map.insert(1, {1, 3});
+
+    map.print();
+}
+
+void test_interval_map4() {//несколько интервалов с разными ключами
+    interval_map<int, int> map;
+
+    map.insert(1, {1, 5});
+    map.insert(2, {3, 7});
+    map.insert(3, {6, 9});
+
+    map.print();
+}
+
+void test_interval_map5() {//пустой ввод
+    interval_map<int, int> map;
+
+    map.print();
+}
+
+void test_interval_map6() {//интервалы с нулевой длиной
+    interval_map<int, int> map;
+
+    map.insert(1, {5, 5});
+    map.insert(1, {3, 3});
+    map.insert(1, {7, 7});
+
+    map.print();
+}
+
+void test_interval_map7() {//интервалы с разными типами
+    interval_map<int, char> map;
+
+    map.insert(1, {'a', 'd'});
+    map.insert(1, {'1', '3'});
+    map.insert(2, {'f', 'i'});
+
+    map.print();
+}
+
+void test_interval_map8() {//некорректные интервалы
+    interval_map<int, int> map;
+
+    map.insert(1, {5, 3});
+    map.insert(1, {7, 10});
+    map.insert(1, {12, 8});
+
+    map.print();
+}
+
+
 int main() {
-    // 1
-    interval_map<int, int> imap_int;
-    test_interval_map(imap_int, 1, 4, 6);
-    test_interval_map(imap_int, 1, 3, 6);
-    test_interval_map(imap_int, 1, 6, 9);
-    test_interval_map(imap_int, 1, 1, 3);
-    test_interval_map(imap_int, 2, 5, 10);
-    test_interval_map(imap_int, 2, 8, 12);
-    test_interval_map(imap_int, 3, 10, 15);
-
-    // 2
-    interval_map<int, float> imap_float;
-    test_interval_map(imap_float, 1, 4.5f, 6.7f);
-    test_interval_map(imap_float, 1, 3.1f, 6.7f);
-    test_interval_map(imap_float, 1, 6.5f, 9.8f);
-    test_interval_map(imap_float, 1, 1.0f, 3.1f);
-    test_interval_map(imap_float, 2, 5.2f, 10.9f);
-    test_interval_map(imap_float, 2, 8.1f, 12.3f);
-    test_interval_map(imap_float, 3, 12.0f, 14.5f);
-
-    // 3
-    interval_map<std::string, int> imap_str_int;
-    test_interval_map(imap_str_int, std::string("key1"), 4, 6);
-    test_interval_map(imap_str_int, std::string("key1"), 3, 6);
-    test_interval_map(imap_str_int, std::string("key2"), 1, 2);
-    test_interval_map(imap_str_int, std::string("key3"), 5, 8);
-    test_interval_map(imap_str_int, std::string("key1"), 2, 5);
+    test_interval_map();
+    test_interval_map2();
+    test_interval_map3();
+    test_interval_map4();
+    test_interval_map5();
+    test_interval_map6();
+    test_interval_map7();
+    test_interval_map8();
 
     return 0;
 }
+
 
 
 
